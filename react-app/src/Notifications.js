@@ -1,6 +1,6 @@
 import avatar from "./images/avatar/avatar-angela-gray.webp"
 
-function Notifications() {
+function Notifications(props) {
   let Notifications = (
     <figure className="my-2 md:flex bg-slate-100 rounded-md py-4  dark:bg-slate-600 text-base">
       <img className="   h-12 w-auto m-auto rounded-full" src={avatar} alt="" width="384" height="512" />
