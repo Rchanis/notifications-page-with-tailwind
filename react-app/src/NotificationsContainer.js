@@ -16,16 +16,21 @@ function NotificationsContainer() {
         })
     }
 
-    const count = () =>
-        notifications.reduce((total, notification) => (notification.readed ? total : total + 1), 0)
+    const counter = () => {
+        const count = notifications.reduce((total, notification) => (notification.readed ? total : total + 1), 0)
+        if (count) return (
+            <div className="h-6 w-8 rounded-md text-center font-bold text-White bg-Blue mx-3">
+                {count}
+            </div>);
+    }
 
 
     return (
         <div className="bg-Very-light-grayish-blue w-screen h-screen grid place-items-center">
             <div className="p-8 container mx-auto w-1/2 rounded-2xl bg-White">
-                <div className="container w-full h-12 flex place-items-center">
+                <div className="container w-full h-8 flex place-items-center mb-8">
                     <h1 className="font-bold text-2xl">Notifications</h1>
-                    <div className="h-6 w-8 rounded-md text-center font-bold text-White bg-Blue mx-3">{count()}</div>
+                    {counter()}
                     <button onClick={mark_all}>mark_all</button>
                 </div>
                 <Notifications notifications={notification} />
