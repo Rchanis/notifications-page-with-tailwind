@@ -31,7 +31,7 @@ function NotificationsContainer() {
                 <div className="container w-full h-8 flex place-items-center mb-8">
                     <h1 className="font-bold text-2xl">Notifications</h1>
                     {counter()}
-                    <button onClick={mark_all}>mark_all</button>
+                    <button className="text-Dark-grayish-blue hover:text-Blue" onClick={mark_all}>Mark all as read</button>
                 </div>
                 <Notifications notifications={notification} />
             </div>
