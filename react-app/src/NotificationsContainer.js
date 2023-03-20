@@ -27,7 +27,7 @@ function NotificationsContainer() {
             <div className="p-8 container mx-auto w-1/2 rounded-2xl bg-White">
                 <div className="container w-full h-8 grid grid-flow-col mb-8">
                     <div className="flex">
-                        <h1 className="font-bold text-2xl">Notifications</h1>
+                        <h1 className="font-bold text-Very-dark-blue text-2xl">Notifications</h1>
                         {setCounter()}
                     </div>
                     <button className="text-Dark-grayish-blue hover:text-Blue place-self-start text-end justify-self-end"
