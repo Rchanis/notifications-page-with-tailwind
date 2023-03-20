@@ -11,7 +11,7 @@ function NotificationsContainer() {
                 not.readed = true;
                 return not
             });
-            console.log(notification)
+
             return notification
         })
     }
@@ -19,7 +19,7 @@ function NotificationsContainer() {
     const counter = () => {
         const count = notifications.reduce((total, notification) => (notification.readed ? total : total + 1), 0)
         if (count) return (
-            <div className="h-6 w-8 rounded-md text-center font-bold text-White bg-Blue mx-3">
+            <div className="h-6 w-8 rounded-md text-center font-bold text-White self-center bg-Blue mx-3">
                 {count}
             </div>);
     }
@@ -28,10 +28,12 @@ function NotificationsContainer() {
     return (
         <div className="bg-Very-light-grayish-blue w-screen h-screen grid place-items-center">
             <div className="p-8 container mx-auto w-1/2 rounded-2xl bg-White">
-                <div className="container w-full h-8 flex place-items-center mb-8">
-                    <h1 className="font-bold text-2xl">Notifications</h1>
-                    {counter()}
-                    <button className="text-Dark-grayish-blue hover:text-Blue" onClick={mark_all}>Mark all as read</button>
+                <div className="container w-full h-8 grid grid-flow-col mb-8">
+                    <div className="flex">
+                        <h1 className="font-bold text-2xl">Notifications</h1>
+                        {counter()}
+                    </div>
+                    <button className="text-Dark-grayish-blue hover:text-Blue place-self-start text-end justify-self-end" onClick={mark_all}>Mark all as read</button>
                 </div>
                 <Notifications notifications={notification} />
             </div>
