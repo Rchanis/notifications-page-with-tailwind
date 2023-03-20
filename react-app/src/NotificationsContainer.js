@@ -7,16 +7,15 @@ function NotificationsContainer() {
 
     function mark_all() {
         setNotification((notification) => {
-            notification.map(not => {
+            notification.forEach(not => {
                 not.readed = true;
-                return not
             });
         })
     }
 
     return (
-        <div className="p-5 container mx-auto w-1/2">
-
+        <div className="p-8 container mx-auto w-1/2">
+            <button onClick={mark_all}>mark_all</button>
             <Notifications notifications={notification} />
         </div>
     );
