@@ -7,16 +7,29 @@ function NotificationsContainer() {
 
     function mark_all() {
         setNotification((notification) => {
-            notification.forEach(not => {
+            notification.map(not => {
                 not.readed = true;
+                return not
             });
+            console.log(notification)
+            return notification
         })
     }
 
+    const count = () =>
+        notifications.reduce((total, notification) => (notification.readed ? total : total + 1), 0)
+
+
     return (
-        <div className="p-8 container mx-auto w-1/2">
-            <button onClick={mark_all}>mark_all</button>
-            <Notifications notifications={notification} />
+        <div className="bg-Very-light-grayish-blue w-screen h-screen grid place-items-center">
+            <div className="p-8 container mx-auto w-1/2 rounded-2xl bg-White">
+                <div className="container w-full h-12 flex place-items-center">
+                    <h1 className="font-bold text-2xl">Notifications</h1>
+                    <div className="h-6 w-8 rounded-md text-center font-bold text-White bg-Blue mx-3">{count()}</div>
+                    <button onClick={mark_all}>mark_all</button>
+                </div>
+                <Notifications notifications={notification} />
+            </div>
         </div>
     );
 }
