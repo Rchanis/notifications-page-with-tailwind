@@ -1,7 +1,5 @@
-
 function Notifications(props) {
   const notifications_jsx = [];
-  console.log(props.notifications)
 
   props.notifications.forEach(element => {
     const name = element.user.toLowerCase().split(" ");
