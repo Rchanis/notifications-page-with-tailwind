@@ -41,5 +41,5 @@
     "gh-pages": "^5.0.0",
     "tailwindcss": "^3.2.7"
   },
-  "homepage": "https://rchanis.github.io/notifications-page-with-tailwind/react-app/",
+  "homepage": "https://rchanis.github.io/notifications-page-with-tailwind/"
 }
